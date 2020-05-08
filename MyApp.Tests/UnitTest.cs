@@ -10,6 +10,9 @@ namespace MyApp.Tests
     {
         private readonly ServiceStackHost appHost;
 
+        /// <summary>
+        /// Unit Test Ctor.
+        /// </summary>
         public UnitTest()
         {
             appHost = new BasicAppHost().Init();

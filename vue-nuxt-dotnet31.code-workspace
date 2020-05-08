@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "MyApp"
+		},
+		{
+			"path": "MyApp.ServiceInterface"
+		},
+		{
+			"path": "MyApp.ServiceModel"
+		},
+		{
+			"path": "MyApp.Tests"
+		}
+	],
+	"settings": {}
+}
