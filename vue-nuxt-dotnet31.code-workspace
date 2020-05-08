@@ -16,5 +16,8 @@
 			"path": "MyApp.Tests"
 		}
 	],
-	"settings": {}
+	"settings": {
+		
+	},
+	"editor.fontLigatures": null
 }

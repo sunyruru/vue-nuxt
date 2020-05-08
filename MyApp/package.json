@@ -11,7 +11,8 @@
     "publish": "npm run build && dotnet publish -c Release",
     "lint": "eslint --ext .js,.vue .",
     "precommit": "npm run lint",
-    "start": "dotnet run"
+    "start": "dotnet run",
+    "test": "dotnet test "
   },
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.4",
