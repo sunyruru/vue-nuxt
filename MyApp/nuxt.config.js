@@ -2,7 +2,7 @@ module.exports = {
   mode: 'spa',
   srcDir: 'src',
   generate: {
-    dir: 'wwwroot',    
+    dir: 'wwwroot',
     routes: [
       // Generate static pages for static file servers handling dynamic routes
     ]

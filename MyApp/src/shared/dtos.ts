@@ -1,10 +1,11 @@
 /* Options:
-Date: 2019-06-08 02:17:12
-Version: 5.51
+Date: 2020-05-08 16:45:38
+Version: 5.81
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
 //GlobalNamespace: 
+//MakePropertiesOptional: False
 //AddServiceStackTypes: True
 //AddResponseStatus: False
 //AddImplicitVersion: 
@@ -42,16 +43,16 @@ export interface IPost
 // @DataContract
 export class ResponseError
 {
-    // @DataMember(Order=1, EmitDefaultValue=false)
+    // @DataMember(Order=1)
     public errorCode: string;
 
-    // @DataMember(Order=2, EmitDefaultValue=false)
+    // @DataMember(Order=2)
     public fieldName: string;
 
-    // @DataMember(Order=3, EmitDefaultValue=false)
+    // @DataMember(Order=3)
     public message: string;
 
-    // @DataMember(Order=4, EmitDefaultValue=false)
+    // @DataMember(Order=4)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<ResponseError>) { (Object as any).assign(this, init); }
@@ -60,19 +61,19 @@ export class ResponseError
 // @DataContract
 export class ResponseStatus
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public errorCode: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public message: string;
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public stackTrace: string;
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public errors: ResponseError[];
 
-    // @DataMember(Order=5)
+    // @DataMember(Order=5, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<ResponseStatus>) { (Object as any).assign(this, init); }
@@ -104,40 +105,40 @@ export class GetPostResponse
 // @DataContract
 export class AuthenticateResponse implements IHasSessionId, IHasBearerToken
 {
-    // @DataMember(Order=1)
-    public userId: string;
-
-    // @DataMember(Order=2)
-    public sessionId: string;
-
-    // @DataMember(Order=3)
-    public userName: string;
-
-    // @DataMember(Order=4)
-    public displayName: string;
-
-    // @DataMember(Order=5)
-    public referrerUrl: string;
-
-    // @DataMember(Order=6)
-    public bearerToken: string;
-
-    // @DataMember(Order=7)
-    public refreshToken: string;
-
-    // @DataMember(Order=8)
-    public profileUrl: string;
-
-    // @DataMember(Order=9)
-    public roles: string[];
-
-    // @DataMember(Order=10)
-    public permissions: string[];
-
-    // @DataMember(Order=11)
+    // @DataMember(Order=11, EmitDefaultValue=true)
     public responseStatus: ResponseStatus;
 
-    // @DataMember(Order=12)
+    // @DataMember(Order=1, EmitDefaultValue=true)
+    public userId: string;
+
+    // @DataMember(Order=2, EmitDefaultValue=true)
+    public sessionId: string;
+
+    // @DataMember(Order=3, EmitDefaultValue=true)
+    public userName: string;
+
+    // @DataMember(Order=4, EmitDefaultValue=true)
+    public displayName: string;
+
+    // @DataMember(Order=5, EmitDefaultValue=true)
+    public referrerUrl: string;
+
+    // @DataMember(Order=6, EmitDefaultValue=true)
+    public bearerToken: string;
+
+    // @DataMember(Order=7, EmitDefaultValue=true)
+    public refreshToken: string;
+
+    // @DataMember(Order=8, EmitDefaultValue=true)
+    public profileUrl: string;
+
+    // @DataMember(Order=9, EmitDefaultValue=true)
+    public roles: string[];
+
+    // @DataMember(Order=10, EmitDefaultValue=true)
+    public permissions: string[];
+
+    // @DataMember(Order=12, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<AuthenticateResponse>) { (Object as any).assign(this, init); }
@@ -146,16 +147,16 @@ export class AuthenticateResponse implements IHasSessionId, IHasBearerToken
 // @DataContract
 export class AssignRolesResponse
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public allRoles: string[];
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public allPermissions: string[];
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public responseStatus: ResponseStatus;
 
     public constructor(init?: Partial<AssignRolesResponse>) { (Object as any).assign(this, init); }
@@ -164,16 +165,16 @@ export class AssignRolesResponse
 // @DataContract
 export class UnAssignRolesResponse
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public allRoles: string[];
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public allPermissions: string[];
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public responseStatus: ResponseStatus;
 
     public constructor(init?: Partial<UnAssignRolesResponse>) { (Object as any).assign(this, init); }
@@ -182,28 +183,28 @@ export class UnAssignRolesResponse
 // @DataContract
 export class RegisterResponse
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public userId: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public sessionId: string;
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public userName: string;
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public referrerUrl: string;
 
-    // @DataMember(Order=5)
+    // @DataMember(Order=5, EmitDefaultValue=true)
     public bearerToken: string;
 
-    // @DataMember(Order=6)
+    // @DataMember(Order=6, EmitDefaultValue=true)
     public refreshToken: string;
 
-    // @DataMember(Order=7)
+    // @DataMember(Order=7, EmitDefaultValue=true)
     public responseStatus: ResponseStatus;
 
-    // @DataMember(Order=8)
+    // @DataMember(Order=8, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<RegisterResponse>) { (Object as any).assign(this, init); }
@@ -241,69 +242,64 @@ export class GetPost implements IReturn<GetPostResponse>
 
 // @Route("/auth")
 // @Route("/auth/{provider}")
-// @Route("/authenticate")
-// @Route("/authenticate/{provider}")
 // @DataContract
 export class Authenticate implements IReturn<AuthenticateResponse>, IPost
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public provider: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public state: string;
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public oauth_token: string;
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public oauth_verifier: string;
 
-    // @DataMember(Order=5)
+    // @DataMember(Order=5, EmitDefaultValue=true)
     public userName: string;
 
-    // @DataMember(Order=6)
+    // @DataMember(Order=6, EmitDefaultValue=true)
     public password: string;
 
-    // @DataMember(Order=7)
-    public rememberMe: boolean;
+    // @DataMember(Order=7, EmitDefaultValue=true)
+    public rememberMe?: boolean;
 
-    // @DataMember(Order=8)
-    public continue: string;
-
-    // @DataMember(Order=9)
+    // @DataMember(Order=9, EmitDefaultValue=true)
     public errorView: string;
 
-    // @DataMember(Order=10)
+    // @DataMember(Order=10, EmitDefaultValue=true)
     public nonce: string;
 
-    // @DataMember(Order=11)
+    // @DataMember(Order=11, EmitDefaultValue=true)
     public uri: string;
 
-    // @DataMember(Order=12)
+    // @DataMember(Order=12, EmitDefaultValue=true)
     public response: string;
 
-    // @DataMember(Order=13)
+    // @DataMember(Order=13, EmitDefaultValue=true)
     public qop: string;
 
-    // @DataMember(Order=14)
+    // @DataMember(Order=14, EmitDefaultValue=true)
     public nc: string;
 
-    // @DataMember(Order=15)
+    // @DataMember(Order=15, EmitDefaultValue=true)
     public cnonce: string;
 
-    // @DataMember(Order=16)
-    public useTokenCookie: boolean;
+    // @DataMember(Order=16, EmitDefaultValue=true)
+    public useTokenCookie?: boolean;
 
-    // @DataMember(Order=17)
+    // @DataMember(Order=17, EmitDefaultValue=true)
     public accessToken: string;
 
-    // @DataMember(Order=18)
+    // @DataMember(Order=18, EmitDefaultValue=true)
     public accessTokenSecret: string;
 
-    // @DataMember(Order=19)
+    // @DataMember(Order=19, EmitDefaultValue=true)
     public scope: string;
 
-    // @DataMember(Order=20)
+    // @DataMember(Order=20, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<Authenticate>) { (Object as any).assign(this, init); }
@@ -315,16 +311,16 @@ export class Authenticate implements IReturn<AuthenticateResponse>, IPost
 // @DataContract
 export class AssignRoles implements IReturn<AssignRolesResponse>, IPost
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public userName: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public permissions: string[];
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public roles: string[];
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<AssignRoles>) { (Object as any).assign(this, init); }
@@ -336,16 +332,16 @@ export class AssignRoles implements IReturn<AssignRolesResponse>, IPost
 // @DataContract
 export class UnAssignRoles implements IReturn<UnAssignRolesResponse>, IPost
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public userName: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public permissions: string[];
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public roles: string[];
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<UnAssignRoles>) { (Object as any).assign(this, init); }
@@ -357,37 +353,34 @@ export class UnAssignRoles implements IReturn<UnAssignRolesResponse>, IPost
 // @DataContract
 export class Register implements IReturn<RegisterResponse>, IPost
 {
-    // @DataMember(Order=1)
+    // @DataMember(Order=1, EmitDefaultValue=true)
     public userName: string;
 
-    // @DataMember(Order=2)
+    // @DataMember(Order=2, EmitDefaultValue=true)
     public firstName: string;
 
-    // @DataMember(Order=3)
+    // @DataMember(Order=3, EmitDefaultValue=true)
     public lastName: string;
 
-    // @DataMember(Order=4)
+    // @DataMember(Order=4, EmitDefaultValue=true)
     public displayName: string;
 
-    // @DataMember(Order=5)
+    // @DataMember(Order=5, EmitDefaultValue=true)
     public email: string;
 
-    // @DataMember(Order=6)
+    // @DataMember(Order=6, EmitDefaultValue=true)
     public password: string;
 
-    // @DataMember(Order=7)
+    // @DataMember(Order=7, EmitDefaultValue=true)
     public confirmPassword: string;
 
-    // @DataMember(Order=8)
-    public autoLogin: boolean;
+    // @DataMember(Order=8, EmitDefaultValue=true)
+    public autoLogin?: boolean;
 
-    // @DataMember(Order=9)
-    public continue: string;
-
-    // @DataMember(Order=10)
+    // @DataMember(Order=10, EmitDefaultValue=true)
     public errorView: string;
 
-    // @DataMember(Order=11)
+    // @DataMember(Order=11, EmitDefaultValue=true)
     public meta: { [index: string]: string; };
 
     public constructor(init?: Partial<Register>) { (Object as any).assign(this, init); }
